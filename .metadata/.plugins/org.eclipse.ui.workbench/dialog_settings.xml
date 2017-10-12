@@ -7,13 +7,13 @@
 			<item value="1"/>
 		</list>
 		<list key="orderedElements">
-			<item value="org.eclipse.jdt.ui.actions.Format"/>
+			<item value="org.eclipse.jdt.ui.edit.text.java.format"/>
 		</list>
 		<list key="orderedProviders">
-			<item value="org.eclipse.ui.actions"/>
+			<item value="org.eclipse.ui.commands"/>
 		</list>
 		<list key="textArray">
-			<item value="for"/>
+			<item value="format"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">

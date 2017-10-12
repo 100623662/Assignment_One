@@ -10,7 +10,7 @@ public class WireResistance {
 	int Gauge;
 
 	// Takes the write gauge and returns the corresponding wire diameter
-	double computeDiameter(int wireGauge) {
+	double static computeDiameter(int wireGauge) {
 
 		double Diameter = 0.127 * 92 * ((36 - wireGauge) / 39); // in mm
 		return (double) Diameter;

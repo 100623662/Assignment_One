@@ -1,6 +1,6 @@
 
 /**
-* @author Drew Walsh 100623662
+* @author AddYourNameHere YourBannerIDhere
 */
 import java.util.Scanner;
 import java.lang.Math;
@@ -12,7 +12,7 @@ public class WireResistance {
 	// Takes the write gauge and returns the corresponding wire diameter
 	double computeDiameter(int wireGauge) {
 
-		double Diameter = 0.127 * 92 * ((36 - wireGauge) / 39); // in mm
+		double Diameter = 0.127 * 92 * ((36 - Gauge) / 39); // in mm
 		return (double) Diameter;
 
 	}
@@ -36,6 +36,6 @@ public class WireResistance {
 		System.out.print("Enter the wire gauge and press enter: ");
 		Scanner in = new Scanner(System.in);
 		int Gauge = in.nextInt();
-		 double Diameter = computeDiameter(Gauge);
+		// double Diameter = computeDiameter(Gauge);
 	}
 }
