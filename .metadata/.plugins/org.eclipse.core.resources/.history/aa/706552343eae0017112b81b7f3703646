@@ -1,0 +1,19 @@
+/**
+* @author NEIL 12345
+*/
+double R;   //resistor
+final double Ro = 50;
+final double K = 0.5;
+double Vm;
+final double Rs = 75;
+final double Vs = 20;
+
+public class PrintVoltageWater {
+	
+ public static void main(String[] args) {
+ R = Ro + (K*T);
+ Vm = ( R / ( Rs + R )) * Vs;
+	println(Vm); 
+ }
+ 
+}

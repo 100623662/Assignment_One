@@ -1,0 +1,65 @@
+/**
+ * @author Drew Walsh 100623662
+ */
+
+public class WoodenBeam {
+	private double height, length, base, I, c, L, stress, A;
+
+	double computeMaxLoad(double stress) {
+		// Write your code here
+		A = stress;
+		I = (base * height * height * height) / 12;
+		c = height / 2;
+		L = (stress * I) / (length * 12 * c);
+
+		return (double) L;
+
+	}
+
+	public WoodenBeam(double x, double y, double z) {
+
+		length = x;
+		base = y;
+		height = z;
+	}
+
+	public static void main(String[] args) {
+
+		// Create a beam object using its length, base and height
+
+		WoodenBeam wb1 = new WoodenBeam(8.0, 2.0, 4.0);
+		WoodenBeam wb2 = new WoodenBeam(8.0, 3.0, 6.0);
+		double maxload1 = wb1.computeMaxLoad(3000.0);
+		double maxload2 = wb2.computeMaxLoad(3000.0);
+
+		// print out details
+
+		// details for Beam #1
+		System.out.println("For Beam #1:");
+		System.out.println("The length of the beam is d = " + wb1.length + " feet which is equal to "
+				+ (wb1.length * 12) + " inches");
+		System.out.println("The length of the base is b = " + wb1.base + " inches");
+		System.out.println("The height of the beam is h = " + wb1.height + " inches");
+		System.out.println("The stress on the fixed end of the beam is S = " + wb1.A + " lbs per square inch");
+		System.out.println("The rectangular moment of inertia is: " + wb1.I + " in^4");
+		System.out.println("The centroid of the beam is: " + wb1.c + " inches");
+		System.out.println(
+				"Using the formula L = (S*I)/(d*c) = (3000*10.67)/(96*2) , the maximum load that can be placed at the end of the beam is: "
+						+ maxload1 + " lbs");
+
+		// details for Beam #2
+		System.out.println("For Beam #2:");
+		System.out.println("The length of the beam is d = " + wb2.length + " feet which is equal to "
+				+ (wb2.length * 12) + " inches");
+		System.out.println("The length of the base is b = " + wb2.base + " inches");
+		System.out.println("The height of the beam is h = " + wb2.height + " inches");
+		System.out.println("The stress on the fixed end of the beam is S = " + wb2.A + " lbs per square inch");
+		System.out.println("The rectangular moment of inertia is: " + wb2.I + " in^4");
+		System.out.println("The centroid of the beam is: " + wb2.c + " inches");
+		System.out.println(
+				"Using the formula L = (S*I)/(d*c) = (3000*54.00)/(96*3) , the maximum load that can be placed at the end of the beam is: "
+						+ maxload2 + " lbs");
+
+	}
+
+}

@@ -1,0 +1,33 @@
+/**
+ * @author NEIL 12345
+ */
+
+public class PrintVoltageWater {
+
+	static double R;				//resistance in OHMS
+	static final double Ro = 50;
+	static final double K = 0.5;
+	static double Vm;				//voltage in V
+	static final double Rs = 75;
+	static final double Vs = 20;
+	
+	
+	
+	
+	public static void main(String[] args) {
+		System.out.println("The relation between tempurature (C) and Voltage (V) can be found using these two formulas:");
+		System.out.println("R = Ro + (K * T)");
+		System.out.println("Vm = (R / (Rs + R)) * Vs\n");
+		System.out.println("T \t Vm");
+		System.out.println("----\t----");
+		
+		//output temperature and its corresponding voltage
+		for (int T = 0; T < 101; T = T + 10) {
+			T += 10;
+			R = Ro + (K * T);
+			Vm = (R / (Rs + R)) * Vs;
+			System.out.printf("%d \t %.2f\n",T,Vm);
+		}
+	}
+
+}
