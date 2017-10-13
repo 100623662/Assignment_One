@@ -10,10 +10,6 @@ public class WireResistance {
 	static int Gauge,Gauge1;
 
 	// Takes the write gauge and returns the corresponding wire diameter
-	/**
-	 * @param Gauge
-	 * @return returns Diameter in meters
-	 */
 	public static double computeDiameter(int Gauge) {
 		
 		// Diameter in millimeters
@@ -25,10 +21,6 @@ public class WireResistance {
 		return (double) Diameter;
 	}
 	
-	/**
-	 * @param length Length in inches
-	 * @return Length in meters
-	 */
 	public static double Lengthmeters(double length){
 		
 		//Length from inches to meters
@@ -38,11 +30,6 @@ public class WireResistance {
 
 	// Takes the length and gauge of a piece of copper wire and returns the
 	// resistance of that wire.
-	/**
-	 * @param lengthM Length in meters
-	 * @param Diameter Diameter in meters
-	 * @return
-	 */
 	static public double computeCopperWireResistance(double lengthM, double Diameter) {
 		Rc = (4 * lengthM * 1.678 * Math.pow(10, -8)) / (Math.PI * Diameter * Diameter);
 		return (double) Rc;
@@ -50,11 +37,6 @@ public class WireResistance {
 
 	// Takes the length and gauge of a piece of aluminum wire and returns the
 	// resistance of that wire.
-	/**
-	 * @param lengthM Length in meters
-	 * @param Diameter Diameter in meters
-	 * @return
-	 */
 	static public double computeAlumWireResistance(double lengthM, double Diameter) {
 		Ra = (4 * lengthM * 2.82 * Math.pow(10, -8)) / (Math.PI * Diameter * Diameter);
 		return (double) Ra;
