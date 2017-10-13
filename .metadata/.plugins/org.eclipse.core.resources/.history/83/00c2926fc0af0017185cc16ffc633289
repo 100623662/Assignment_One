@@ -7,22 +7,18 @@ import java.lang.Math;
 
 public class WireResistance {
 	public static double diameter, Diameter, Dmm, Rc, Ra,lengthM;
-	static int Gauge,Gauge1;
+	static int Gauge;
 
 	// Takes the write gauge and returns the corresponding wire diameter
 	public static double computeDiameter(int Gauge) {
-		
 		// Diameter in millimeters
-		double Dmm = 0.127 *Math.pow(92.0,((36.0-Gauge)/39.0));
-		
+		double Dmm = 0.127 * Math.pow(92, ((36 - Gauge) / 39));
 		// diameter in meters
 		Diameter = Dmm / 1000;
-		
 		return (double) Diameter;
 	}
 	
 	public static double Lengthmeters(double length){
-		
 		//Length from inches to meters
 		lengthM = length*0.0254;
 		return (double) lengthM;
@@ -48,12 +44,6 @@ public class WireResistance {
 		System.out.print("Enter the wire gauge and press enter: ");
 		Scanner in = new Scanner(System.in);
 		int Gauge = in.nextInt();
-		
-	while(Gauge<0||!(Gauge==(int)Gauge)){
-			System.out.print("Enter the wire gauge and press enter: ");
-			int Gauge1 = in.nextInt();
-	}
-		Gauge = Gauge1;
 		Diameter = computeDiameter(Gauge);
 		System.out.print("Enter the wire length in inches: ");
 		double length = in.nextDouble();

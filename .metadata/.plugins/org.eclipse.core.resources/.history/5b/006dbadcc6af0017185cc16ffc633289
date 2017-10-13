@@ -50,8 +50,11 @@ public class WireResistance {
 		int Gauge = in.nextInt();
 		
 	while(Gauge<0||!(Gauge==(int)Gauge)){
+			if(Gauge<0||!(Gauge==(int)Gauge)){
+		
 			System.out.print("Enter the wire gauge and press enter: ");
 			int Gauge1 = in.nextInt();
+			}
 	}
 		Gauge = Gauge1;
 		Diameter = computeDiameter(Gauge);
