@@ -1,0 +1,27 @@
+/**
+* @author NEIL 12345
+*/
+
+
+public class PrintVoltageWater {
+	
+	static double R;
+	static final double Ro = 50;
+	static final double K = 0.5;
+	static double Vm;
+	static final double Rs = 75;
+	static final double Vs = 20;
+	static double T = 10;
+	
+ public static void main(String[] args) {
+	 System.out.print("T"+"     "); 
+		System.out.println("Vm");
+	 for (int T = 0; T <101; T=T+10) {
+ R = Ro + (K*T);
+Vm = ( R / ( Rs + R )) * Vs;
+System.out.print(T+"     "); 
+	System.out.printf("%03d", Vm); 
+ }
+ }
+ 
+}

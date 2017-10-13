@@ -1,0 +1,59 @@
+/**
+ * @author Drew Walsh 100623662
+ */
+
+public class WoodenBeam {
+	private double height, length, base, I, c, L, stress, A;
+
+	/**
+	 * @param stress
+	 * @return The max weight in lbs
+	 */
+	
+	double computeMaxLoad(double stress) {
+		// Write your code here
+		A = stress;
+		I = (base * height * height * height) / 12;
+		c = height / 2;
+		L = (stress * I) / (length * 12 * c);
+
+		return (double) L;
+
+	}
+
+	public WoodenBeam(double x, double y, double z) {
+//parameters for woodenbeam
+		length = x;
+		base = y;
+		height = z;
+	}
+	
+	public void PrintWoodenBeam(double length ,double base ,double height ,double A ,double I ,double c ,double maxload){
+		System.out.println("For Beam #1:");
+		System.out.println("The length of the beam is d = " + length + " feet which is equal to "
+				+ (length * 12) + " inches");
+		System.out.println("The length of the base is b = " + base + " inches");
+		System.out.println("The height of the beam is h = " + height + " inches");
+		System.out.println("The stress on the fixed end of the beam is S = " + A + " lbs per square inch");
+		System.out.println("The rectangular moment of inertia is: " + I + " in^4");
+		System.out.println("The centroid of the beam is: " + c + " inches");
+		System.out.println(
+				"Using the formula L = (S*I)/(d*c) = (3000*10.67)/(96*2) , the maximum load that can be placed at the end of the beam is: "
+						+ maxload + " lbs");
+	
+	}
+
+	public static void main(String[] args) {
+
+		// Create a beam object using its length, base and height
+		WoodenBeam wb1 = new WoodenBeam(8.0, 2.0, 4.0);
+		WoodenBeam wb2 = new WoodenBeam(8.0, 3.0, 6.0);
+		double maxload1 = wb1.computeMaxLoad(3000.0);
+		double maxload2 = wb2.computeMaxLoad(3000.0);
+
+		
+		wb1.PrintWoodenBeam(wb1.length , wb1.base , wb1.height , wb1.A , wb1.I , wb1.c , maxload1);
+		wb2.PrintWoodenBeam(wb2.length , wb2.base , wb2.height , wb2.A , wb2.I , wb2.c , maxload2);
+	}
+
+}

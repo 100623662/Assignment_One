@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;d&apos; from expression &apos;Vm=(Vm)&apos;&#x0D;&#x0A;- Original project: &apos;Assignment_1-1&apos;&#x0D;&#x0A;- Variable name: &apos;d&apos;&#x0D;&#x0A;- Destination method: &apos;PrintVoltageWater.main()&apos;&#x0D;&#x0A;- Variable expression: &apos;Vm=(Vm)&apos;" description="Extract local variable &apos;d&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;{PrintVoltageWater.java" name="d" replace="false" selection="741 14" stamp="1507699305578" version="1.0"/>
+</session>

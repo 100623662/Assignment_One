@@ -1,0 +1,42 @@
+/**
+* @author AddYourNameHere YourBannerIDhere
+*/
+
+public class WoodenBeam {
+ double computeMaxLoad(double stress) {
+ // Write your code here
+ }
+ public static void main(String[] args) {
+ // Create a beam object using its length, base and height
+	 
+	 
+	 
+ WoodenBeam wb1 = new WoodenBeam(8.0, 2.0, 4.0);
+ WoodenBeam wb2 = new WoodenBeam(8.0, 3.0, 6.0);
+ double maxload1 = wb1.computeMaxLoad(3000.0);
+ double maxload2 = wb2.computeMaxLoad(3000.0);
+ 
+ // print out details
+ //details for Beam#1
+ System.out.println("For Beam #1:");
+ System.out.println("The length of the beam is d = " +  " feet which is equal to 96 inches");
+ System.out.println("The length of the base is b = " + " inches");
+ System.out.println("The height of the beam is h = " + " inches");
+ System.out.println("The stress on the fixed end of the beam is S = " + " lbs per square inch");
+ System.out.println("The rectangular moment of inertia is: " + " in^4");
+ System.out.println("The centroid of the beam is: " + " inches");
+ System.out.println("Using the formula L = (S*I)/(d*c) = (3000*10.67)/(96*2) , the maximum load that can be placed at the end of the beam is: " + " lbs");
+ 
+ 
+ //details for Beam#2
+ System.out.println("For Beam #2:");
+ System.out.println("The length of the beam is d = " +  " feet which is equal to 96 inches");
+ System.out.println("The length of the base is b = " + " inches");
+ System.out.println("The height of the beam is h = " + " inches");
+ System.out.println("The stress on the fixed end of the beam is S = " + " lbs per square inch");
+ System.out.println("The rectangular moment of inertia is: " + " in^4");
+ System.out.println("The centroid of the beam is: " + " inches");
+ System.out.println("Using the formula L = (S*I)/(d*c) = (3000*10.67)/(96*2) , the maximum load that can be placed at the end of the beam is: " + " lbs");
+ 
+ }
+}

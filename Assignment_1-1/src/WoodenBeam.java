@@ -6,7 +6,7 @@ public class WoodenBeam {
 	private double height, length, base, I, c, L, stress, A;
 
 	/**
-	 * @param stress
+	 * @param stress number given
 	 * @return The max weight in lbs
 	 */
 

@@ -1,0 +1,49 @@
+
+/**
+* @author Drew Walsh 100623662
+*/
+import java.util.Scanner;
+import java.lang.Math;
+
+public class WireResistance {
+	public static double diameter, Diameter, Dmm, Rc, Ra;
+	static int Gauge;
+
+	// Takes the write gauge and returns the corresponding wire diameter
+	public static double computeDiameter(int Gauge) {
+		// Diameter in mm
+		double Dmm = 0.127 * Math.pow(92, ((36 - Gauge) / 39)) ;
+		// diameter in inches
+		Diameter = Dmm / 25.4;
+		return (double) Diameter;
+	}
+
+	// Takes the length and gauge of a piece of copper wire and returns the
+	// resistance of that wire.
+	static public double computeCopperWireResistance(double length, double Diameter) {
+		Rc = (4 * length * 1.678 * Math.pow(10, -8)) / (Math.PI * Diameter * Diameter);
+		return (double) Rc;
+	}
+
+	// Takes the length and gauge of a piece of aluminum wire and returns the
+	// resistance of that wire.
+	static public double computeAlumWireResistance(double length, double Diameter) {
+		Ra = (4 * length * 2.82 * Math.pow(10, -8)) / (Math.PI * Diameter * Diameter);
+		return (double) Ra;
+	}
+
+	public static void main(String[] args) {
+		System.out.print(
+				"Enter wire gauge and length and press enter when promted to calculate resistance in a copper and aluminium wire.\nEnter the wire gauge and press enter: ");
+		Scanner in = new Scanner(System.in);
+		int Gauge = in.nextInt();
+		double Diameter = computeDiameter(Gauge);
+		System.out.print("Enter the wire length in inches: ");
+		int length = in.nextInt();
+		in.close();
+		double Rc = computeCopperWireResistance(length, Diameter);
+		double Ra = computeAlumWireResistance(length, Diameter);
+		System.out.print("The resistance of a " + length + " inch piece of " + Gauge + " gauge copper wire is " + Rc
+				+ "Ohms\nThe resistance of a " + length + " inch piece of " + Gauge + " gauge aluminium wire is " + Ra +"Ohms");
+	}
+}
