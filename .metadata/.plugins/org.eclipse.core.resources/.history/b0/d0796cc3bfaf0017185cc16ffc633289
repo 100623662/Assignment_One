@@ -19,7 +19,6 @@ public class WireResistance {
 	}
 	
 	public static double Lengthmeters(double length){
-		//Length from inches to meters
 		lengthM = length*0.0254;
 		return (double) lengthM;
 	}

@@ -1,0 +1,48 @@
+
+/**
+* @author Drew Walsh 100623662
+*/
+import java.util.Scanner;
+import java.lang.Math;
+
+public class WireResistance {
+	double diameter,Diameter, Dmm, Rc,Ra;
+	int Gauge;
+
+	// Takes the write gauge and returns the corresponding wire diameter
+	double computeDiameter(int Gauge) {
+
+		double Dmm = 0.127 * 92 * ((36 - Gauge) / 39); // in mm
+		diameter = Dmm/25.4;
+		return (double) diameter;
+
+	}
+
+	// Takes the length and gauge of a piece of copper wire and returns the
+	// resistance of that wire.
+	double computeCopperWireResistance(double length, int wireGauge) {
+		Rc = (4 * length * 0.00000001678) / (Math.PI * Diameter * Diameter);
+		return (double)Rc;
+	}
+
+	// Takes the length and gauge of a piece of aluminum wire and returns the
+	// resistance of that wire. The resistivity
+	// of aluminum is 2.82 x 10−8 Ω m
+	double computeAlumWireResistance(double length, double Diameter) {
+		Ra = (4 * length * 0.0000000282) / (Math.PI * Diameter * Diameter);
+		return (double)Ra;
+	}
+
+	public static void main(String[] args) {
+		System.out.print("Enter wire gauge and length when promted to calculate resistance in a copper and aluminium wire.");
+		System.out.print("Enter the wire gauge and press enter: ");
+		Scanner in = new Scanner(System.in);
+		int Gauge = in.nextInt();
+		System.out.print("Enter the wire length in inches: ");
+		Scanner in2 = new Scanner(System.in);
+		double length = in2.nextInt();
+		double Diameter = computeDiameter(Gauge);
+		System.out.print("The resistance of a" + Diameter +" inch piece of "+length+" gauge copper wire is ");
+		
+	}
+}

@@ -14,14 +14,13 @@ public class WireResistance {
 		// Diameter in millimeters
 		double Dmm = 0.127 * Math.pow(92, ((36 - Gauge) / 39));
 		// diameter in meters
-		Diameter = Dmm / 1000;
+		Diameter = Dmm / 100;
 		return (double) Diameter;
 	}
 	
 	public static double Lengthmeters(double length){
-		//Length from inches to meters
-		lengthM = length*0.0254;
-		return (double) lengthM;
+		length = length*0.0254;
+		return (double) length;
 	}
 
 	// Takes the length and gauge of a piece of copper wire and returns the
